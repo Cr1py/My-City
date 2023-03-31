@@ -55,7 +55,7 @@ class _LoginState extends State<Login> {
                     padding: const EdgeInsets.only(top: 120.0, bottom: 0.0),
                     child: Text(
                       'Login',
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.lato(
                         fontSize: 40,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -90,11 +90,11 @@ class _LoginState extends State<Login> {
                           ),
                           filled: true,
                           fillColor: Colors.black12,
-                          labelStyle: GoogleFonts.workSans(
+                          labelStyle: GoogleFonts.lato(
                             fontSize: 16,
                             color: Colors.black,
                           ),
-                          hintStyle: GoogleFonts.workSans(
+                          hintStyle: GoogleFonts.lato(
                             color: Colors.black54,
                           ),
                           enabledBorder: OutlineInputBorder(
