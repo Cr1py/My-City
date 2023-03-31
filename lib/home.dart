@@ -6,6 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mycity/viewpost.dart';
+import 'editor.dart';
+import 'preview.dart';
+
 
 import 'post.dart';
 import 'login.dart';
@@ -30,7 +33,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int index = 0;
   final DatabaseReference dbRef = FirebaseDatabase.instance.reference().child('posts');
+  final _buildBody = const <Widget> [Home_Page(), Editor()];
+  final _AppBarTitle = const <String> ["Discovery", "Editor", "Settings"];
+  bool isHome = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +47,20 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Discovery'),
+        title: Text('${_AppBarTitle[index]}'),
         actions: [
-          IconButton(
+          isHome
+          ? IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
               setState(() {
                 _showSearchDialog(context);
               });
             },
-          ),
-          IconButton(
+          )
+          : Container(),
+          isHome
+          ? IconButton(
             icon: Icon(Icons.filter_list), // by votes
             onPressed: () {
               setState(() {
@@ -58,7 +68,8 @@ class _HomeState extends State<Home> {
                 Navigator.pop(context);
               });
             },
-          ),
+          )
+          : Container(),
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () {
@@ -68,51 +79,33 @@ class _HomeState extends State<Home> {
         ],
       ),
 
-      body: Center(
-        child: FutureBuilder(
-          future: dbRef.once(),
-          builder: (context, AsyncSnapshot<DataSnapshot> snapshot) {
-            if (snapshot.hasData) {
-              List<Post> posts = [];
-              Map<dynamic, dynamic> values = snapshot.data!.value;
-              if (values != null) {
-                values.forEach((key, value) {
-                  posts.add(Post.fromSnapshot(value));
-                });
-              }
-              return StaggeredGridView.countBuilder(
-                crossAxisCount: 4,
-                itemCount: posts.length,
-                itemBuilder: (BuildContext context, int index) =>
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PostDetailScreen(post: posts[index]),
-                          ),
-                        );
-                      },
-                      child: CachedNetworkImage(
-                        imageUrl: posts[index].imgUrl!,
-                        placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                staggeredTileBuilder: (int index) => StaggeredTile.count(2, index.isEven ? 3 : 2),
-                mainAxisSpacing: 8.0,
-                crossAxisSpacing: 8.0,
-              );
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
-        ),
-      ),
+      body: _buildBody[index],
 
       // TODO: bottom nav bar
+      bottomNavigationBar: BottomNavigationBar(
+          elevation: 20,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: 'Editor',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+          currentIndex: index,
+          onTap: (x) {
+            setState(() {
+              index = x;
+              isHome = false;
+            });
+          }
+      ),
 
     );
   }
@@ -199,5 +192,23 @@ class _HomeState extends State<Home> {
         });
       });
     }
+  }
+}
+
+
+class Home_Page extends StatefulWidget {
+  const Home_Page({Key? key}) : super(key: key);
+
+  @override
+  State<Home_Page> createState() => _Home_PageState();
+}
+
+class _Home_PageState extends State<Home_Page> {
+  final DatabaseReference dbRef = FirebaseDatabase.instance.reference().child('posts');
+
+
+  @override
+  Widget build(BuildContext context) {
+    return 0;
   }
 }

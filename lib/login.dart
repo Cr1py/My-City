@@ -40,9 +40,7 @@ class _LoginState extends State<Login> {
 
     return MaterialApp(
       home: Container(
-        // decoration: BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage("assets/images/6.jpg"), fit: BoxFit.cover)),     //Background Image
+
         child: Scaffold(
           key: _scaffoldKey,
           backgroundColor: Colors.white,
@@ -73,7 +71,7 @@ class _LoginState extends State<Login> {
                           decoration: BoxDecoration(
                             //color: Colors.white10,
                               borderRadius: BorderRadius.circular(10.0)),
-                          child: Image.asset('assets/images/auth.png')),
+                          child: Image.asset('')),
                     ),
                   ),
                   Padding(
@@ -264,10 +262,7 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                         child: Row(
                           children: <Widget>[
-                            Image(
-                              image: AssetImage("assets/google_logo.png"),
-                              height: 30.0,
-                            ),
+                            Image.asset("assets/house.png"),
                             Padding(
                               padding:
                               const EdgeInsets.only(left: 40, right: 55),

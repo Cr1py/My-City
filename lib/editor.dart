@@ -4,14 +4,14 @@ import 'preview.dart';
 import 'draggable.dart';
 
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Editor_Home extends StatefulWidget {
+  const Editor_Home({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Editor_Home> createState() => _Editor_HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _Editor_HomeState extends State<Editor_Home> {
   int index = 0;
   final _buildBody = const <Widget> [Editor(), Preview(listName: 2)];
 
