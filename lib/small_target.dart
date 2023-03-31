@@ -21,8 +21,8 @@ class _smallTargetState extends State<smallTarget> {
             List<dynamic> rejected,
             ) {
           return Container(
-            height: 25.0,
-            width: 25.0,
+            height: 40.0,
+            width: 40.0,
             color: Color(0xF72585),
             child: Image.asset('$image'),
           );

@@ -71,7 +71,7 @@ class _EditorState extends State<Editor> {
     List<dragTarget> list = [];
 
     for (int i = count; i < count + increment; i++){
-      String image = imageList[1][i];
+      String image = imageList2[i];
       var newItem = dragTarget(path: "$image");
 
       list.add(newItem);
