@@ -67,6 +67,7 @@ class ResetPage extends State<Reset> {
                       style: GoogleFonts.workSans(
                         fontSize: 30,
                         color: Colors.black,
+                        fontWeight: FontWeight.w500,
                         //fontWeight: FontWeight.bold
                       ),
                     )),
@@ -97,7 +98,7 @@ class ResetPage extends State<Reset> {
                             color: Colors.black87,
                           ),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -106,7 +107,7 @@ class ResetPage extends State<Reset> {
                           enabledBorder: OutlineInputBorder(
                             //borderRadius: BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             //borderRadius: BorderRadius.all(Radius.circular(5.0)),
@@ -154,16 +155,13 @@ class ResetPage extends State<Reset> {
                         'Reset',
                         //style: TextStyle(color: Colors.black, fontSize: 20,),
                         style: GoogleFonts.workSans(
-                          fontSize: 19,
-                          color: Colors.black,
+                          fontSize: 18,
+                          color: Colors.white,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.black45,
-                        onPrimary: Colors.white,
-                        shadowColor: Colors.black45,
-                        elevation: 8,
+                        primary: Colors.black87,
                         //side: BorderSide(color: Colors.black70),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),

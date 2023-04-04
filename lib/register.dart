@@ -72,7 +72,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                       style: GoogleFonts.workSans(
                         fontSize: 30,
                         color: Colors.black,
-                        //fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.w500,
                       ),
                     )),
                   ),
@@ -91,7 +91,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             color: Colors.black87,
                           ),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -101,7 +101,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             //gapPadding: 4.0,
                             //borderRadius: BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             //gapPadding: .0,
@@ -128,7 +128,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             color: Colors.black87,
                           ),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -138,7 +138,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             //gapPadding: 4.0,
                             //borderRadius: BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             //gapPadding: .0,
@@ -180,7 +180,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                                 });
                               }),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -190,7 +190,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             borderRadius:
                             BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius:
@@ -235,7 +235,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                                 });
                               }),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -245,7 +245,7 @@ class _LoginDemoState extends State<_RegisterPage> {
                             borderRadius:
                             BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius:
@@ -290,17 +290,13 @@ class _LoginDemoState extends State<_RegisterPage> {
                         'Register',
                         //style: TextStyle(color: Colors.white, fontSize: 20,),
                         style: GoogleFonts.workSans(
-                          fontSize: 19,
-                          color: Colors.black,
+                          fontSize: 18,
+                          color: Colors.white,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.black45,
-                        onPrimary: Colors.white,
-                        shadowColor: Colors.black45,
-                        elevation: 8,
-                        //side: BorderSide(color: Colors.white70),
+                        primary: Colors.black87,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                           side: BorderSide(

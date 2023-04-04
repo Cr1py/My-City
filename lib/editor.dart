@@ -63,9 +63,6 @@ class Editor extends StatefulWidget {
 
 class _EditorState extends State<Editor> {
   double size = 55.0;
-  Color base = Color.fromRGBO(19, 42, 19, 0.9);
-  Color light = Color.fromRGBO(236, 243, 158, 1.0);
-  Color Celeste = Color.fromRGBO(181, 146, 160, 1.0);
 
   List<dragTarget> getTargets(int count, int increment){
     List<dragTarget> list = [];
@@ -108,8 +105,12 @@ class _EditorState extends State<Editor> {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: base,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
+            border: Border.all(
+              color: Colors.black,
+              width: 2,
+            ),
           ),
           padding: EdgeInsets.all(5.0),
           margin: EdgeInsets.all(10.0),
@@ -120,10 +121,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/road-vert.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -135,10 +136,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -152,10 +153,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/road-hori.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -167,10 +168,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -184,10 +185,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/house.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -199,10 +200,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -216,10 +217,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/building.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -231,10 +232,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -248,10 +249,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/park.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -263,10 +264,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -280,10 +281,10 @@ class _EditorState extends State<Editor> {
                 data: 'assets/intersection.png',
                 feedback: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -295,10 +296,10 @@ class _EditorState extends State<Editor> {
                 ),
                 child: Container(
                     decoration: BoxDecoration(
-                      color: light,
+                      color: Colors.white,
                       border: Border.all(
-                        color: Celeste,
-                        width: 3,
+                        color: Colors.black,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(10.0),
                     ),
