@@ -49,8 +49,8 @@ class _PreviewState extends State<Preview> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 370.0,
-      height: 370.0,
+      width: 350.0,
+      height: 350.0,
       child: Column(
         children: [
           ...getRows(),

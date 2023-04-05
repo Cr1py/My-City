@@ -21,8 +21,8 @@ class _dragTargetState extends State<dragTarget> {
           List<dynamic> rejected,
           ) {
         return Container(
-          height: 50.0,
-          width: 50.0,
+          height: 45.0,
+          width: 45.0,
           color: Color(0xF72585),
           child: Image.asset('$image'),
         );

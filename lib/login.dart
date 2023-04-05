@@ -9,7 +9,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import './register.dart';
 import './home.dart';
 import './resetpass.dart';
-import 'package:mycity/resetpass.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -40,9 +39,6 @@ class _LoginState extends State<Login> {
 
     return MaterialApp(
       home: Container(
-        // decoration: BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage("assets/images/6.jpg"), fit: BoxFit.cover)),     //Background Image
         child: Scaffold(
           key: _scaffoldKey,
           backgroundColor: Colors.white,
@@ -50,35 +46,26 @@ class _LoginState extends State<Login> {
             child: Form(
               key: _formKey,
               child: Column(
+                //crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 120.0, bottom: 0.0),
-                    child: Text(
-                      'Login',
-                      style: GoogleFonts.lato(
-                        fontSize: 40,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    padding: const EdgeInsets.only(top: 50, bottom: 30.0),
                   ),
+
+                  // Email Input
                   Padding(
-                    padding: const EdgeInsets.only(top: 0, bottom: 50.0),
+                    padding: const EdgeInsets.only(top: 0, bottom: 25.0),
                     child: Center(
                       child: Container(
-                        //padding:
-                        //  const EdgeInsets.only(top: 30.0, bottom: 30.0),
-                          width: 200,
-                          height: 150,
+                          width: 400,
+                          height: 300,
                           decoration: BoxDecoration(
-                            //color: Colors.white10,
                               borderRadius: BorderRadius.circular(10.0)),
-                          child: Image.asset('assets/images/auth.png')),
+                          child: Image.asset('assets/logo-named.png')),
                     ),
                   ),
                   Padding(
-                    //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                     child: TextFormField(
                       controller: _emailidController,
                       keyboardType: TextInputType.emailAddress,
@@ -89,7 +76,7 @@ class _LoginState extends State<Login> {
                             color: Colors.black87,
                           ),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.lato(
                             fontSize: 16,
                             color: Colors.black,
@@ -98,23 +85,20 @@ class _LoginState extends State<Login> {
                             color: Colors.black54,
                           ),
                           enabledBorder: OutlineInputBorder(
-                            //borderRadius: BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            //borderRadius: BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
                             BorderSide(color: Colors.black, width: 1.5),
                           ),
-                          labelText: 'Email',
-                          hintText: ''),
+                          labelText: 'Email')
                     ),
                   ),
+
+                  // Password Input
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15.0, right: 15.0, top: 10.0, bottom: 30.0),
-                    //padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 0.0),
                     child: TextFormField(
                       controller: _passwordController,
                       obscureText: !_passwordVisible,
@@ -138,7 +122,7 @@ class _LoginState extends State<Login> {
                                 });
                               }),
                           filled: true,
-                          fillColor: Colors.black12,
+                          fillColor: Color.fromARGB(100, 232, 236, 244),
                           labelStyle: GoogleFonts.workSans(
                             fontSize: 16,
                             color: Colors.black,
@@ -150,80 +134,19 @@ class _LoginState extends State<Login> {
                             borderRadius:
                             BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 0.5),
+                            BorderSide(color: Colors.black, width: 1),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius:
                             BorderRadius.all(Radius.circular(5.0)),
                             borderSide:
-                            BorderSide(color: Colors.black, width: 2),
+                            BorderSide(color: Colors.black, width: 1.5),
                           ),
-                          labelText: 'Password',
-                          hintText: ''),
+                          labelText: 'Password')
                     ),
                   ),
-                  Container(
-                    height: 50,
-                    width: 350,
-                    // decoration: BoxDecoration(
-                    //     color: Colors.deepPurple[900],
-                    //     borderRadius: BorderRadius.circular(30)),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (!_emailidController.text.contains('@')) {
-                          displayToastMessage('Invalid Email-ID', context);
-                        } else if (_passwordController.text.length < 8) {
-                          displayToastMessage(
-                              'Password should be a minimum of 8 characters',
-                              context);
-                        } else {
-                          setState(() {
-                            visible = load(visible);
-                          });
-                          login();
-                        }
-                      },
-                      child: Text(
-                        'Login',
-                        //style: TextStyle(color: Colors.white, fontSize: 20,),
-                        style: GoogleFonts.workSans(
-                          fontSize: 19,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.black45,
-                        onPrimary: Colors.white,
-                        shadowColor: Colors.black45,
-                        elevation: 8,
-                        //side: BorderSide(color: Colors.white70),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(
-                            color: Colors.white70,
-                            width: 2,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Visibility(
-                      maintainSize: true,
-                      maintainAnimation: true,
-                      maintainState: true,
-                      visible: visible,
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          child: Container(
-                              width: 320,
-                              margin: EdgeInsets.only(),
-                              child: LinearProgressIndicator(
-                                minHeight: 2,
-                                backgroundColor: Colors.white60,
-                                valueColor:
-                                AlwaysStoppedAnimation(Colors.black),
-                              )))),
+
+                  //Forgot Pass
                   Container(
                     height: 30,
                     width: 300,
@@ -246,13 +169,70 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0, bottom: 15.0),
+                  ),
+
+                  // Login Button
+                  Container(
+                    height: 50,
+                    width: 340,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(100, 30, 35, 44),
+                      borderRadius: BorderRadius.circular(10)),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (!_emailidController.text.contains('@')) {
+                          displayToastMessage('Invalid Email-ID', context);
+                        } else if (_passwordController.text.length < 8) {
+                          displayToastMessage(
+                              'Password should be a minimum of 8 characters',
+                              context);
+                        } else {
+                          setState(() {
+                            visible = load(visible);
+                          });
+                          login();
+                        }
+                      },
+                      child: Text(
+                        'Login',
+                        style: GoogleFonts.workSans(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black87,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Visibility(
+                      maintainSize: true,
+                      maintainAnimation: true,
+                      maintainState: true,
+                      visible: visible,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          child: Container(
+                              width: 320,
+                              margin: EdgeInsets.only(),
+                              child: LinearProgressIndicator(
+                                minHeight: 2,
+                                backgroundColor: Colors.white60,
+                                valueColor:
+                                AlwaysStoppedAnimation(Colors.black)
+                              )))),
+
+                  // Google Sign In
                   Container(
                     height: 60,
-                    width: 350,
+                    width: 340,
                     padding: EdgeInsets.only(top: 10),
-                    // decoration: BoxDecoration(
-                    //     color: Colors.deepPurple[900],
-                    //     borderRadius: BorderRadius.circular(30)),
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
@@ -260,12 +240,22 @@ class _LoginState extends State<Login> {
                         });
                         googleSignIn(context);
                       },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          side: BorderSide(
+                            color: Colors.black87,
+                            width: 1
+                          ),
+                        ),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                         child: Row(
                           children: <Widget>[
                             Image(
-                              image: AssetImage("assets/google_logo.png"),
+                              image: AssetImage("assets/google.png"),
                               height: 30.0,
                             ),
                             Padding(
@@ -274,31 +264,14 @@ class _LoginState extends State<Login> {
                               child: Text(
                                 'Sign in with Google',
                                 style: GoogleFonts.workSans(
-                                  fontSize: 19,
+                                  fontSize: 18,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w500,
-                                  backgroundColor: Colors.transparent,
-                                  letterSpacing: 0.0,
-                                  // fontWeight: FontWeight.bold,
+                                  letterSpacing: 0.0
                                 ),
                               ),
                             )
                           ],
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        // primary: Colors.black45,
-                        primary: Colors.transparent,
-                        onPrimary: Colors.black,
-                        shadowColor: Colors.black45,
-                        elevation: 8,
-                        //side: BorderSide(color: Colors.white70,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(
-                            color: Colors.black87,
-                            width: 2,
-                          ),
                         ),
                       ),
                     ),
@@ -331,7 +304,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         'New User? Create Account',
                         style: GoogleFonts.workSans(
-                          fontSize: 15,
+                          fontSize: 14,
                           color: Colors.black,
                         ),
                       ),
@@ -361,12 +334,9 @@ class _LoginState extends State<Login> {
         SchedulerBinding.instance.addPostFrameCallback((_) {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) => HomePage()));
-          //visible=!visible;
         });
 
-        //displayToastMessage('',context);
       } catch (e) {
-        //visible=!visible;
         setState(() {
           visible = load(visible);
         });
@@ -379,9 +349,7 @@ class _LoginState extends State<Login> {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      // Obtain the auth details from the request
-      final GoogleSignInAuthentication googleAuth =
-      await googleUser!.authentication;
+      final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
 
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
