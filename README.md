@@ -1,5 +1,5 @@
 # MyCity Project
-MyCity is a mobile app project built using Flutter framework that aims to provide information about different cities around the world. This README.md file contains instructions on how to download, install, and run MyCity on your local development environment.
+MyCity is a mobile app project built using Flutter framework that aims to provide the everyday citizen the ability to share their ideas for developing their city. This README.md file contains instructions on how to download, install, and run MyCity on your local development environment.
 
 ## Prerequisites
 Before you can run MyCity, you need to have the following software installed on your computer:
@@ -24,4 +24,4 @@ MyCity is built using Flutter, and it runs best on Android Studio. To run MyCity
 - If you encounter a red screen error on the emulator, you can try to refresh the app by pressing "r" in the terminal. You may need to do this once to initialize the app.
 
 ## Conclusion
-Congratulations! You have successfully downloaded, installed, and ran MyCity on your local development environment. You can now explore the app and enjoy learning about different cities around the world! If you have any questions or encounter any issues, please refer to the project's documentation or seek help from the project's community. Thank you for using MyCity! Enjoy your journey through the cities of the world! 🌍🌆🗺️📱
+Congratulations! You have successfully downloaded, installed, and ran MyCity on your local development environment. You can now explore the app and enjoy planning our your neighbourhood! If you have any questions or encounter any issues, please refer to the project's documentation or seek help from us the devs. Thank you for using MyCity! 🌍🌆🗺️📱
